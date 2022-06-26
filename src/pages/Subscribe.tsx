@@ -2,6 +2,7 @@ import { useState, FormEvent } from "react"
 import { Logo } from "../components/Logo"
 import { gql, useMutation, useQuery } from "@apollo/client";
 import { useNavigate } from "react-router-dom";
+import { ImagemHome } from "../components/ImagemHome";
 
 const CREATE_SUBSCRIBER_MUTETION = gql`
     mutation CreateSubscreber ($name: String!, $email: String!) {
@@ -68,10 +69,10 @@ export function Subscribe() {
                     </form>
                 </div>
             </div>
-            <img className="mt-10"
-                src="/src/assets/code-mockup.png"
-                alt=""
-            />
+            <div className="mt-10"
+                // src="/src/assets/code-mockup.png"
+                // alt=""
+            > <ImagemHome/> </div>
         </div>
     )
 }
