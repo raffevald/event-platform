@@ -2,6 +2,7 @@ import { DefaultUi, Youtube } from "@vime/react";  /* @vite-ignore */
 import { CaretRight, DiscordLogo, FileArrowDown, Lightning, Play } from "phosphor-react";
 import '@vime/core/themes/default.css'
 import { gql, useQuery } from "@apollo/client";
+import ReactPlayer from "react-player";
 
 const GET_LESSON_BY_SLUG_QUERY = gql`
     query GetLessonBySlug ($slug: String) {
@@ -54,10 +55,16 @@ export function Video(props: VideoProps) {
         <div className="flex-1">
             <div className="bg-black flex justify-center">
                 <div className="h-full w-full max-w-[1100px] max-h-[60vh] aspect-video">
-                    <Play>
-                    <Youtube videoId={data.lesson.videoId}/>
+                    {/* <Play>
+                        <Youtube videoId={data.lesson.videoId}/>
                         <DefaultUi />
-                    </Play>
+                    </Play> */}
+                    <ReactPlayer className="flex h-full w-full max-w-[1100px] max-h-[60vh] aspect-video"
+                        url={data.lesson.videoId}
+                        width="100%"
+                        height="100%"
+                        controls={true}
+                    />
                 </div>
             </div>
 
