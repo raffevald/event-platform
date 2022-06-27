@@ -25,7 +25,7 @@ interface GetLessonBySlugResponse {
         description: string;
         teacher: {
             bio: string
-            avatarUrl: string;
+            avatarURL: string;
             name: string;
         }
     }
@@ -41,8 +41,6 @@ export function Video(props: VideoProps) {
             slug: props.lessonSlug,
         }
     })
-
-    console.log(data)
 
     if(!data) {
         return (
@@ -75,7 +73,7 @@ export function Video(props: VideoProps) {
 
                         <div className="flex items-center gap-4 mt-6">
                             <img className="h-16 w-16 rounded-full boder-2 border-blue-500 "
-                                src={data.lesson.teacher.avatarUrl}
+                                src={data.lesson.teacher.avatarURL}
                                 alt=""
                             />
 
